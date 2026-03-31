@@ -18,7 +18,7 @@ const telepulesek = [
   "Sárpilis",
   "Sióagárd",
   "Szedres",
-  "TOLNA 01 KÖRZET",
+  "Szekszárd",
   "Tengelic",
   "Tolna",
   "Várdomb",

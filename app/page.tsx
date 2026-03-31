@@ -2,7 +2,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { SiteFooter } from "@/app/components/SiteFooter";
 import { SiteHeader } from "@/app/components/SiteHeader";
-import { events, news, pillars } from "@/app/components/site-data";
+import { news, pillars } from "@/app/components/site-data";
 
 export default function Home() {
   return (
@@ -120,20 +120,12 @@ export default function Home() {
             <h2 className="text-3xl font-semibold md:text-4xl">
               Következő események
             </h2>
-            <div className="mt-10 grid gap-5 md:grid-cols-3">
-              {events.map((event) => (
-                <article
-                  key={event.title}
-                  className="rounded-2xl border border-cyan-300/20 bg-slate-900/70 p-5"
-                >
-                  <p className="text-sm font-semibold text-cyan-200">{event.date}</p>
-                  <h3 className="mt-2 text-lg font-semibold text-white">
-                    {event.title}
-                  </h3>
-                  <p className="mt-3 text-sm text-slate-300">{event.location}</p>
-                </article>
-              ))}
-            </div>
+            <article className="mt-10 rounded-2xl border border-cyan-300/25 bg-slate-900/70 p-8 text-center">
+              <p className="text-lg font-semibold text-cyan-200">Hamarosan...</p>
+              <p className="mt-3 text-sm text-slate-300">
+                Az eseménynaptár feltöltés alatt áll.
+              </p>
+            </article>
           </div>
         </section>
 

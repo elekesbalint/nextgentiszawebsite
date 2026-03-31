@@ -17,7 +17,7 @@ export function SiteFooter() {
           </div>
 
           <div className="flex flex-col gap-4 text-sm text-slate-300">
-            <p>Email: nextgentisza@gmail.com</p>
+            <p>Email: info@nextgentisza.hu</p>
             <div className="flex items-center gap-3">
               <a
                 href="https://www.facebook.com/nextgentiszaszekszard"

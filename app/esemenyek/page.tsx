@@ -1,6 +1,5 @@
 import { SiteFooter } from "@/app/components/SiteFooter";
 import { SiteHeader } from "@/app/components/SiteHeader";
-import { events } from "@/app/components/site-data";
 
 export default function EsemenyekPage() {
   return (
@@ -25,21 +24,13 @@ export default function EsemenyekPage() {
 
         <section className="border-b border-white/10 bg-slate-900/80">
           <div className="mx-auto w-full max-w-6xl px-6 py-16">
-            <div className="grid gap-5 md:grid-cols-3">
-              {events.map((event, index) => (
-                <article
-                  key={event.title}
-                  className={`animate-fade-up rounded-2xl border border-cyan-300/20 bg-slate-900/75 p-5 shadow-lg shadow-cyan-900/20 ${index === 1 ? "animate-delay-1" : ""} ${index === 2 ? "animate-delay-2" : ""}`}
-                >
-                  <p className="text-sm font-semibold text-cyan-200">{event.date}</p>
-                  <h2 className="mt-2 text-lg font-semibold text-white">{event.title}</h2>
-                  <p className="mt-3 text-sm text-slate-300">{event.location}</p>
-                  <span className="mt-5 inline-flex rounded-full border border-cyan-300/35 px-3 py-1 text-xs font-semibold uppercase tracking-[0.12em] text-cyan-200">
-                    Nyitott esemény
-                  </span>
-                </article>
-              ))}
-            </div>
+            <article className="animate-fade-up rounded-2xl border border-cyan-300/25 bg-slate-900/75 p-10 text-center shadow-lg shadow-cyan-900/20">
+              <p className="text-2xl font-semibold text-cyan-200">Hamarosan...</p>
+              <p className="mt-4 text-sm text-slate-300">
+                Dolgozunk az események feltöltésén, rövidesen itt lesz minden friss
+                információ.
+              </p>
+            </article>
           </div>
         </section>
       </main>

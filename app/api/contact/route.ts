@@ -8,7 +8,7 @@ type ContactPayload = {
   message: string;
 };
 
-const recipient = "nextgentisza@gmail.com";
+const recipient = "info@nextgentisza.hu";
 
 function isValidEmail(email: string) {
   return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);

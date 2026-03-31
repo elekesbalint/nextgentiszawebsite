@@ -26,7 +26,7 @@ export default function HirekPage() {
               Friss információk és közlemények
             </h1>
             <p className="animate-fade-up animate-delay-2 mt-6 max-w-3xl text-base leading-8 text-slate-200/90 md:text-lg">
-              Itt gyűjtjük össze a Next Gen Tisza Sziget Szekszárd fontos híreit,
+              Itt gyűjtjük össze a Next Gen Tisza Sziget TOLNA 01 KÖRZET fontos híreit,
               bejelentéseit és közösségi aktualitásait.
             </p>
           </div>

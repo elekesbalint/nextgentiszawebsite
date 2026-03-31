@@ -30,12 +30,12 @@ export const events = [
   {
     date: "Május 2.",
     title: "Beszélgetés helyi vállalkozókkal",
-    location: "Szekszárd belváros",
+    location: "TOLNA 01 KÖRZET belváros",
   },
 ];
 
 export const news = [
-  "Elindult a Next Gen Tisza Sziget Szekszárd közösségi csatornája.",
+  "Elindult a Next Gen Tisza Sziget TOLNA 01 KÖRZET közösségi csatornája.",
   "Megnyitottuk a jelentkezést önkéntes szervezői feladatokra.",
   "Közzétettük az első helyi közösségi célokat és programvázlatot.",
 ];

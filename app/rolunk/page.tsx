@@ -27,7 +27,7 @@ export default function RolunkPage() {
               Helyi közösségből valódi cselekvés
             </h1>
             <p className="animate-fade-up animate-delay-2 mt-6 max-w-3xl text-base leading-8 text-slate-200/90 md:text-lg">
-              A Next Gen Tisza Sziget Szekszárd célja, hogy hiteles, nyitott és
+              A Next Gen Tisza Sziget TOLNA 01 KÖRZET célja, hogy hiteles, nyitott és
               együttműködő közéleti közösséget építsen. Nem kampányzajt, hanem
               valódi megoldásokat és helyi jelenlétet szeretnénk.
             </p>

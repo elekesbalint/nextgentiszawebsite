@@ -32,19 +32,21 @@ export default function Home() {
               priority
             />
             <h1 className="mt-10 text-4xl font-semibold leading-tight md:text-6xl">
-              Next Gen Tisza Sziget Tolna 01
+              NEXT GEN TISZA SZIGET TOLNA 01
             </h1>
             <p className="mt-5 max-w-2xl text-base leading-8 text-slate-200/90 md:text-lg">
               Közösség, felelősség, cselekvés. Egy helyi csapat, amely a város
               jövőjéért dolgozik.
             </p>
             <div className="mt-9 flex flex-wrap items-center justify-center gap-3">
-              <Link
-                href="/cselekedj"
-                className="rounded-xl bg-[#e89124] px-8 py-3 text-base font-semibold text-white transition hover:bg-[#ff9d24]"
+              <a
+                href="https://magyartisza.hu/cselekedj/onkentes"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="rounded-xl bg-gradient-to-r from-[#ce2939] via-[#ffffff] to-[#477050] px-8 py-3 text-base font-semibold text-black transition hover:brightness-105"
               >
                 Csatlakozz hozzánk
-              </Link>
+              </a>
               <Link
                 href="/program"
                 className="rounded-xl border border-white/35 px-8 py-3 text-base font-semibold text-white transition hover:border-white"
@@ -74,15 +76,39 @@ export default function Home() {
                 Dr. Sárosi József
               </h2>
               <p className="mt-5 text-base leading-8 text-slate-200/90">
-                Szekszárdon nőtt fel, itt alapított családot, és ma is a városért
+                TOLNA 01 KÖRZET nőtt fel, itt alapított családot, és ma is a városért
                 dolgozik. Jogászként és cégvezetőként hisz a felelős döntésekben,
                 az átlátható működésben és az emberséges közéletben.
               </p>
               <Link
                 href="/jeloltunk"
-                className="mt-7 inline-flex rounded-xl bg-[#e89124] px-6 py-3 text-sm font-semibold text-white transition hover:bg-[#ff9d24]"
+                className="mt-7 inline-flex rounded-xl bg-gradient-to-r from-[#ce2939] via-[#ffffff] to-[#477050] px-6 py-3 text-sm font-semibold text-black transition hover:brightness-105"
               >
                 Részletes bemutatkozás
+              </Link>
+            </div>
+          </div>
+        </section>
+
+        <section className="border-b border-white/10 bg-slate-900/75">
+          <div className="mx-auto w-full max-w-6xl px-6 py-16">
+            <div className="rounded-3xl border border-cyan-300/25 bg-slate-900/70 p-8 text-center md:p-10">
+              <p className="text-xs font-semibold uppercase tracking-[0.14em] text-cyan-200">
+                Csatlakozás
+              </p>
+              <h2 className="mt-4 text-3xl font-semibold md:text-4xl">
+                Szeretnél TISZA tag lenni?
+              </h2>
+              <p className="mx-auto mt-4 max-w-3xl text-sm leading-8 text-slate-100/90 md:text-base">
+                Legyél része a Next Gen Tisza Sziget TOLNA 01 KÖRZET közösségének.
+                Ha tenni szeretnél a helyi ügyekért, írj nekünk, és segítünk a
+                csatlakozásban.
+              </p>
+              <Link
+                href="/kapcsolat"
+                className="mt-7 inline-flex rounded-xl bg-gradient-to-r from-[#ce2939] via-[#ffffff] to-[#477050] px-7 py-3 text-sm font-semibold text-black transition hover:brightness-105"
+              >
+                Csatlakozz!
               </Link>
             </div>
           </div>
@@ -96,7 +122,7 @@ export default function Home() {
               </h2>
               <p className="mt-5 text-base leading-8 text-slate-200/85">
                 Helyi fókusz, szakmai igényesség és emberközeli szerveződés.
-                Közösen szeretnénk alakítani Szekszárd jövőjét.
+                Közösen szeretnénk alakítani TOLNA 01 KÖRZET jövőjét.
               </p>
             </div>
             <div className="grid gap-6 md:grid-cols-3">

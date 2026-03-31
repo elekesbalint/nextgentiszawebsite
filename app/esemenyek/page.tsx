@@ -22,7 +22,7 @@ export default function EsemenyekPage() {
               Eseménynaptár
             </p>
             <h1 className="animate-fade-up animate-delay-1 mt-4 max-w-3xl text-4xl font-semibold leading-tight md:text-6xl">
-              Találkozzunk személyesen Szekszárdon
+              Találkozzunk személyesen TOLNA 01 KÖRZET
             </h1>
             <p className="animate-fade-up animate-delay-2 mt-6 max-w-3xl text-base leading-8 text-slate-200/90 md:text-lg">
               Fórumok, közösségi napok és helyi beszélgetések - minden eseményünk

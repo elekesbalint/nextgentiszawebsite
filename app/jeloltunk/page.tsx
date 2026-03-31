@@ -16,7 +16,7 @@ const telepulesek = [
   "Sárpilis",
   "Sióagárd",
   "Szedres",
-  "Szekszárd",
+  "TOLNA 01 KÖRZET",
   "Tengelic",
   "Tolna",
   "Várdomb",
@@ -46,14 +46,14 @@ export default function JeloltunkPage() {
                 Dr. Sárosi József
               </h1>
               <p className="mt-3 text-lg text-slate-200/90">
-                OEVK jelöltünk - Szekszárd és környéke
+                OEVK jelöltünk - TOLNA 01 KÖRZET és környéke
               </p>
               <div className="mt-8 flex flex-wrap gap-3">
                 <a
                   href="https://adomanyozas.magyartisza.hu/c/tolna.01?source=web_aloldal"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="rounded-xl bg-[#e89124] px-5 py-3 text-sm font-semibold text-white transition hover:bg-[#ff9d24]"
+                  className="rounded-xl bg-gradient-to-r from-[#ce2939] via-[#ffffff] to-[#477050] px-5 py-3 text-sm font-semibold text-black transition hover:brightness-105"
                 >
                   Kampány támogatása
                 </a>
@@ -109,7 +109,7 @@ export default function JeloltunkPage() {
               <article className="rounded-2xl border border-white/10 bg-white/5 p-6 md:col-span-2">
                 <h2 className="text-2xl font-semibold md:text-3xl">Bemutatkozás</h2>
                 <p className="mt-5 text-base leading-8 text-slate-200/90">
-                  Dr. Sárosi József egész életét Szekszárdon élte, itt nőtt fel,
+                  Dr. Sárosi József egész életét TOLNA 01 KÖRZET élte, itt nőtt fel,
                   itt alapított családot, és ma is itt neveli három fiát. Jogász
                   végzettségű, aki két évtizede cégvezetőként bizonyítja, hogy
                   képes felelősséggel dönteni, csapatot építeni és helytállni a
@@ -121,7 +121,7 @@ export default function JeloltunkPage() {
                   A rendszerváltást azért tartja fontosnak, mert úgy látja: a
                   jelenlegi hatalom alatt egyre nőnek a társadalmi különbségek,
                   erősödik a korrupció, és a fiatal generáció előtt bezárulnak a
-                  lehetőségek. József szerint most dől el, hogy Szekszárd és Tolna
+                  lehetőségek. József szerint most dől el, hogy TOLNA 01 KÖRZET és Tolna
                   megye a jövőben is európai irányt követ-e, vagy tovább sodródik
                   egy kiszámíthatatlan rendszer felé.
                 </p>

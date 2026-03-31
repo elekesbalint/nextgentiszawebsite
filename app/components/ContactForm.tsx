@@ -106,7 +106,7 @@ export function ContactForm() {
       <button
         type="submit"
         disabled={status === "loading"}
-        className="mt-5 inline-flex rounded-xl bg-[#e89124] px-5 py-3 text-sm font-semibold text-white transition hover:bg-[#ff9d24] disabled:cursor-not-allowed disabled:opacity-70"
+        className="mt-5 inline-flex rounded-xl bg-gradient-to-r from-[#ce2939] via-[#ffffff] to-[#477050] px-5 py-3 text-sm font-semibold text-black transition hover:brightness-105 disabled:cursor-not-allowed disabled:opacity-70"
       >
         {status === "loading" ? "Küldés..." : "Üzenet küldése"}
       </button>

@@ -8,13 +8,31 @@ import { CountdownBar } from "@/app/components/CountdownBar";
 export function SiteHeader() {
   const [mobileOpen, setMobileOpen] = useState(false);
 
-  const navItems = [
+  type NavItem = {
+    href: string;
+    label: string;
+    external?: boolean;
+    children?: Array<{ href: string; label: string; external?: boolean }>;
+  };
+
+  const navItems: NavItem[] = [
     { href: "/program", label: "Program" },
     { href: "/rolunk", label: "Rólunk" },
     { href: "/jeloltunk", label: "Jelöltünk" },
     { href: "/esemenyek", label: "Események" },
     { href: "/hirek", label: "Hírek" },
-    { href: "/cselekedj", label: "Cselekedj" },
+    {
+      href: "https://magyartisza.hu/cselekedj/onkentes",
+      label: "Cselekedj",
+      external: true,
+      children: [
+        {
+          href: "https://magyartisza.hu/cselekedj/tiszavilag",
+          label: "Tisza Világ",
+          external: true,
+        },
+      ],
+    },
     { href: "/kapcsolat", label: "Kapcsolat" },
   ];
 
@@ -41,9 +59,48 @@ export function SiteHeader() {
 
           <nav className="hidden items-center gap-6 text-[15px] font-medium text-white/92 lg:flex">
             {navItems.map((item) => (
-              <Link key={item.href} href={item.href} className="transition hover:text-white">
-                {item.label}
-              </Link>
+              item.children?.length ? (
+                <div key={item.href} className="group relative">
+                  <a
+                    href={item.href}
+                    target={item.external ? "_blank" : undefined}
+                    rel={item.external ? "noopener noreferrer" : undefined}
+                    className="inline-flex items-center gap-1 transition hover:text-white"
+                  >
+                    {item.label}
+                    <span className="text-xs">v</span>
+                  </a>
+                  <div className="pointer-events-none absolute left-0 top-[calc(100%+10px)] w-44 rounded-xl border border-white/15 bg-[#0a1340]/95 p-2 opacity-0 shadow-xl transition-opacity duration-150 group-hover:pointer-events-auto group-hover:opacity-100">
+                    {item.children.map((child) => (
+                      <a
+                        key={child.href}
+                        href={child.href}
+                        target={child.external ? "_blank" : undefined}
+                        rel={child.external ? "noopener noreferrer" : undefined}
+                        className="block rounded-lg px-3 py-2 text-sm text-white/90 transition hover:bg-white/10 hover:text-white"
+                      >
+                        {child.label}
+                      </a>
+                    ))}
+                  </div>
+                </div>
+              ) : (
+                item.external ? (
+                  <a
+                    key={item.href}
+                    href={item.href}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="transition hover:text-white"
+                  >
+                    {item.label}
+                  </a>
+                ) : (
+                  <Link key={item.href} href={item.href} className="transition hover:text-white">
+                    {item.label}
+                  </Link>
+                )
+              )
             ))}
           </nav>
 
@@ -89,14 +146,40 @@ export function SiteHeader() {
           <div className="border-t border-white/10 px-4 pb-4 pt-3 lg:hidden">
             <nav className="flex flex-col gap-2 text-sm font-medium text-white/92">
               {navItems.map((item) => (
-                <Link
-                  key={item.href}
-                  href={item.href}
-                  className="rounded-lg px-2 py-2 transition hover:bg-white/10"
-                  onClick={() => setMobileOpen(false)}
-                >
-                  {item.label}
-                </Link>
+                item.external ? (
+                  <div key={item.href}>
+                    <a
+                      href={item.href}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="block rounded-lg px-2 py-2 transition hover:bg-white/10"
+                      onClick={() => setMobileOpen(false)}
+                    >
+                      {item.label}
+                    </a>
+                    {item.children?.map((child) => (
+                      <a
+                        key={child.href}
+                        href={child.href}
+                        target={child.external ? "_blank" : undefined}
+                        rel={child.external ? "noopener noreferrer" : undefined}
+                        className="ml-3 block rounded-lg px-2 py-2 text-white/85 transition hover:bg-white/10 hover:text-white"
+                        onClick={() => setMobileOpen(false)}
+                      >
+                        - {child.label}
+                      </a>
+                    ))}
+                  </div>
+                ) : (
+                  <Link
+                    key={item.href}
+                    href={item.href}
+                    className="rounded-lg px-2 py-2 transition hover:bg-white/10"
+                    onClick={() => setMobileOpen(false)}
+                  >
+                    {item.label}
+                  </Link>
+                )
               ))}
               <a
                 href="https://adomanyozas.magyartisza.hu/c/adomanyozas"

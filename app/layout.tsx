@@ -13,9 +13,9 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Next Gen Tisza Sziget Szekszárd",
+  title: "Next Gen Tisza Sziget TOLNA 01 KÖRZET",
   description:
-    "A Next Gen Tisza Sziget Szekszárd hivatalos közösségi oldala. Események, hírek és csatlakozási lehetőségek.",
+    "A Next Gen Tisza Sziget TOLNA 01 KÖRZET hivatalos közösségi oldala. Események, hírek és csatlakozási lehetőségek.",
   icons: {
     icon: "/icon.png",
     apple: "/apple-icon.png",

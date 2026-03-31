@@ -1,3 +1,4 @@
+import Image from "next/image";
 import Link from "next/link";
 
 export function SiteFooter() {
@@ -9,7 +10,7 @@ export function SiteFooter() {
         <div className="flex flex-col gap-8 md:flex-row md:items-start md:justify-between">
           <div>
             <p className="text-sm uppercase tracking-[0.14em] text-cyan-200/80">
-              Next Gen Tisza Sziget Szekszárd
+              Next Gen Tisza Sziget Tolna 01
             </p>
             <p className="mt-3 max-w-md text-sm leading-7 text-slate-300">
               A TISZA Párthoz kapcsolódó helyi közösségi kezdeményezés.
@@ -18,6 +19,21 @@ export function SiteFooter() {
 
           <div className="flex flex-col gap-4 text-sm text-slate-300">
             <p>Email: info@nextgentisza.hu</p>
+            <a
+              href="https://magyartisza.hu"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-2 text-cyan-300 transition hover:text-cyan-200"
+            >
+              <Image
+                src="/tisza-sziget-icon.png"
+                alt="TISZA logo"
+                width={600}
+                height={293}
+                className="h-4 w-auto object-contain"
+              />
+              magyartisza.hu
+            </a>
             <div className="flex items-center gap-3">
               <a
                 href="https://www.facebook.com/nextgentiszaszekszard"

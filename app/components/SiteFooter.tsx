@@ -36,7 +36,7 @@ export function SiteFooter() {
             </a>
             <div className="flex items-center gap-3">
               <a
-                href="https://www.facebook.com/nextgentiszaszekszard"
+                href="https://www.facebook.com/profile.php?id=61575349613006&mibextid=wwXIfr&rdid=3ljHwf5uFUfARwT3&share_url=https%3A%2F%2Fwww.facebook.com%2Fshare%2F18QBxjjQZb%2F%3Fmibextid%3DwwXIfr"
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label="Facebook"

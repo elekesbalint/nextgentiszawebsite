@@ -28,7 +28,7 @@ export default function KapcsolatPage() {
               <p>
                 <span className="text-slate-400">Facebook:</span>{" "}
                 <a
-                  href="https://www.facebook.com/tisza.tolnamegye.01oevk/"
+                  href="https://www.facebook.com/profile.php?id=61575349613006&mibextid=wwXIfr&rdid=3ljHwf5uFUfARwT3&share_url=https%3A%2F%2Fwww.facebook.com%2Fshare%2F18QBxjjQZb%2F%3Fmibextid%3DwwXIfr"
                   target="_blank"
                   rel="noreferrer"
                   className="text-cyan-200 transition hover:text-cyan-100"

@@ -34,7 +34,7 @@ export function SiteHeader() {
             <div className="leading-none">
               <p className="text-3xl font-medium tracking-wide text-white">TISZA</p>
               <p className="mt-1 text-[10px] uppercase tracking-[0.12em] text-cyan-200/85">
-                Szekszárd Next Gen Tisza Sziget
+                Next Gen Tisza Sziget
               </p>
             </div>
           </Link>

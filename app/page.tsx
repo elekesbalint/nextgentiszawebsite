@@ -32,7 +32,7 @@ export default function Home() {
               priority
             />
             <h1 className="mt-10 text-4xl font-semibold leading-tight md:text-6xl">
-              Next Gen Tisza Sziget Szekszárd
+              Next Gen Tisza Sziget Tolna 01
             </h1>
             <p className="mt-5 max-w-2xl text-base leading-8 text-slate-200/90 md:text-lg">
               Közösség, felelősség, cselekvés. Egy helyi csapat, amely a város

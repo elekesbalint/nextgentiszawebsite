@@ -1,6 +1,8 @@
 import Image from "next/image";
+import type { Metadata } from "next";
 import { SiteFooter } from "@/app/components/SiteFooter";
 import { SiteHeader } from "@/app/components/SiteHeader";
+import { buildMetadata } from "@/app/seo";
 
 const telepulesek = [
   "Alsónyék",
@@ -21,6 +23,14 @@ const telepulesek = [
   "Tolna",
   "Várdomb",
 ];
+
+export const metadata: Metadata = buildMetadata({
+  title: "Jelöltünk - Dr. Sárosi József",
+  description:
+    "Dr. Sárosi József, a Tolna 01. OEVK jelölt részletes bemutatkozása, céljai és elérhetőségei.",
+  path: "/jeloltunk",
+  keywords: ["Dr. Sárosi József", "Tolna 01 jelölt", "OEVK", "TISZA jelölt"],
+});
 
 export default function JeloltunkPage() {
   return (

@@ -1,13 +1,49 @@
 import Image from "next/image";
 import Link from "next/link";
+import type { Metadata } from "next";
+import Script from "next/script";
 import { SiteFooter } from "@/app/components/SiteFooter";
 import { SiteHeader } from "@/app/components/SiteHeader";
 import { news, pillars } from "@/app/components/site-data";
+import { buildMetadata } from "@/app/seo";
+
+export const metadata: Metadata = buildMetadata({
+  title: "Kezdőlap",
+  description:
+    "Next Gen Tisza Sziget Tolna 01 hivatalos oldal: hírek, események, közösségi csatlakozás és helyi ügyek egy helyen.",
+  path: "/",
+  keywords: [
+    "Next Gen Tisza Sziget",
+    "Tolna 01",
+    "TISZA Párt",
+    "helyi közösség",
+    "Szekszárd",
+  ],
+});
 
 export default function Home() {
   return (
     <div className="bg-slate-950 text-white">
       <SiteHeader />
+      <Script
+        id="organization-jsonld"
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "Organization",
+            name: "Next Gen Tisza Sziget Tolna 01",
+            url: "https://nextgentisza.hu",
+            logo: "https://nextgentisza.hu/tisza-sziget-logo.png",
+            email: "info@nextgentisza.hu",
+            sameAs: [
+              "https://www.facebook.com/profile.php?id=61575349613006&mibextid=wwXIfr&rdid=3ljHwf5uFUfARwT3&share_url=https%3A%2F%2Fwww.facebook.com%2Fshare%2F18QBxjjQZb%2F%3Fmibextid%3DwwXIfr",
+              "https://www.instagram.com/dr_sarosi_jozsef/",
+              "https://magyartisza.hu",
+            ],
+          }),
+        }}
+      />
 
       <main>
         <section className="relative overflow-hidden border-b border-white/10 bg-[#050d2e]">

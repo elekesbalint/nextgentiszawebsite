@@ -1,6 +1,16 @@
+import type { Metadata } from "next";
 import { SiteFooter } from "@/app/components/SiteFooter";
 import { SiteHeader } from "@/app/components/SiteHeader";
 import { ContactForm } from "@/app/components/ContactForm";
+import { buildMetadata } from "@/app/seo";
+
+export const metadata: Metadata = buildMetadata({
+  title: "Kapcsolat",
+  description:
+    "Lépj kapcsolatba a Next Gen Tisza Sziget Tolna 01 csapatával: kérdés, üzenet vagy csatlakozási szándék esetén.",
+  path: "/kapcsolat",
+  keywords: ["Kapcsolat", "EmailJS űrlap", "Next Gen Tisza elérhetőség", "Tolna 01 kapcsolat"],
+});
 
 export default function KapcsolatPage() {
   return (

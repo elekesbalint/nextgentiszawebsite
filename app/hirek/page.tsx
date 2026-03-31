@@ -1,7 +1,17 @@
 import Image from "next/image";
+import type { Metadata } from "next";
 import { SiteFooter } from "@/app/components/SiteFooter";
 import { SiteHeader } from "@/app/components/SiteHeader";
 import { news } from "@/app/components/site-data";
+import { buildMetadata } from "@/app/seo";
+
+export const metadata: Metadata = buildMetadata({
+  title: "Hírek",
+  description:
+    "Friss hírek és közlemények a Next Gen Tisza Sziget Tolna 01 közösségétől.",
+  path: "/hirek",
+  keywords: ["Hírek", "Next Gen Tisza", "Tolna 01 hírek", "közéleti aktualitások"],
+});
 
 export default function HirekPage() {
   return (

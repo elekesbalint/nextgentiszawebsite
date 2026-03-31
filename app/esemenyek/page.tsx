@@ -1,6 +1,16 @@
 import Image from "next/image";
+import type { Metadata } from "next";
 import { SiteFooter } from "@/app/components/SiteFooter";
 import { SiteHeader } from "@/app/components/SiteHeader";
+import { buildMetadata } from "@/app/seo";
+
+export const metadata: Metadata = buildMetadata({
+  title: "Események",
+  description:
+    "Kövesd a Next Gen Tisza Sziget Tolna 01 közösségi eseményeit, fórumait és találkozóit.",
+  path: "/esemenyek",
+  keywords: ["Események", "Tolna 01", "közösségi fórum", "helyi programok"],
+});
 
 export default function EsemenyekPage() {
   return (

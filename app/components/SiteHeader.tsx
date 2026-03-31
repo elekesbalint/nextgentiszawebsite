@@ -60,7 +60,7 @@ export function SiteHeader() {
           <nav className="hidden items-center gap-6 text-[15px] font-medium text-white/92 lg:flex">
             {navItems.map((item) => (
               item.children?.length ? (
-                <div key={item.href} className="group relative">
+                <div key={item.href} className="group relative -mb-2 pb-2">
                   <a
                     href={item.href}
                     target={item.external ? "_blank" : undefined}
@@ -68,9 +68,15 @@ export function SiteHeader() {
                     className="inline-flex items-center gap-1 transition hover:text-white"
                   >
                     {item.label}
-                    <span className="text-xs">v</span>
+                    <svg
+                      viewBox="0 0 24 24"
+                      aria-hidden
+                      className="mt-[1px] h-3.5 w-3.5 fill-none stroke-current"
+                    >
+                      <path strokeWidth="2" strokeLinecap="round" d="m6 9 6 6 6-6" />
+                    </svg>
                   </a>
-                  <div className="pointer-events-none absolute left-0 top-[calc(100%+10px)] w-44 rounded-xl border border-white/15 bg-[#0a1340]/95 p-2 opacity-0 shadow-xl transition-opacity duration-150 group-hover:pointer-events-auto group-hover:opacity-100">
+                  <div className="pointer-events-none absolute left-0 top-full z-40 w-44 rounded-xl border border-white/15 bg-[#0a1340]/95 p-2 opacity-0 shadow-xl transition-opacity duration-150 group-hover:pointer-events-auto group-hover:opacity-100">
                     {item.children.map((child) => (
                       <a
                         key={child.href}

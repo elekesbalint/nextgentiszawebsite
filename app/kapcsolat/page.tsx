@@ -6,21 +6,53 @@ export default function KapcsolatPage() {
   return (
     <div className="bg-slate-950 text-white">
       <SiteHeader />
-      <main className="mx-auto w-full max-w-6xl px-6 py-16">
-        <h1 className="text-4xl font-semibold md:text-5xl">Kapcsolat</h1>
-        <p className="mt-6 max-w-3xl text-base leading-8 text-slate-200/90">
-          Várjuk üzenetedet, kérdésedet vagy csatlakozási szándékodat.
-        </p>
+      <main className="mx-auto w-full max-w-6xl px-6 py-16 md:py-20">
+        <section className="relative overflow-hidden rounded-3xl border border-cyan-300/25 bg-gradient-to-br from-[#061322] via-[#0b1f35] to-[#071a2e] px-6 py-10 md:px-10 md:py-14">
+          <div className="pointer-events-none absolute -right-24 -top-16 h-64 w-64 rounded-full bg-cyan-400/20 blur-3xl" />
+          <div className="pointer-events-none absolute -left-24 -bottom-16 h-64 w-64 rounded-full bg-blue-500/20 blur-3xl" />
 
-        <div className="mt-10 grid gap-6 md:grid-cols-2">
-          <article className="rounded-2xl border border-white/10 bg-white/5 p-6">
+          <h1 className="relative z-10 text-4xl font-semibold md:text-5xl">Kapcsolat</h1>
+          <p className="relative z-10 mt-6 max-w-3xl text-base leading-8 text-slate-100/90">
+            Várjuk üzenetedet, kérdésedet vagy csatlakozási szándékodat. Közösen
+            építjük tovább a TOLNA 01 KÖRZET közösségét.
+          </p>
+        </section>
+
+        <div className="mt-10 grid gap-6 md:grid-cols-[0.95fr_1.05fr]">
+          <article className="rounded-3xl border border-white/10 bg-white/5 p-6 backdrop-blur-sm md:p-8">
             <h2 className="text-xl font-semibold">Elérhetőségek</h2>
-            <p className="mt-4 text-sm leading-7 text-slate-200/85">
-              Email: info@nextgentisza.hu
-            </p>
-            <p className="text-sm leading-7 text-slate-200/85">
-              Facebook: /nextgentiszaszekszard
-            </p>
+            <div className="mt-6 space-y-4 text-sm leading-7 text-slate-200/90">
+              <p>
+                <span className="text-slate-400">Email:</span> info@nextgentisza.hu
+              </p>
+              <p>
+                <span className="text-slate-400">Facebook:</span>{" "}
+                <a
+                  href="https://www.facebook.com/tisza.tolnamegye.01oevk/"
+                  target="_blank"
+                  rel="noreferrer"
+                  className="text-cyan-200 transition hover:text-cyan-100"
+                >
+                  tisza.tolnamegye.01oevk
+                </a>
+              </p>
+              <p>
+                <span className="text-slate-400">Instagram:</span>{" "}
+                <a
+                  href="https://www.instagram.com/dr_sarosi_jozsef/"
+                  target="_blank"
+                  rel="noreferrer"
+                  className="text-cyan-200 transition hover:text-cyan-100"
+                >
+                  dr_sarosi_jozsef
+                </a>
+              </p>
+            </div>
+
+            <div className="mt-6 rounded-2xl border border-cyan-300/25 bg-cyan-300/10 px-4 py-3 text-sm text-cyan-50/95">
+              Üzeneted közvetlenül a csapathoz érkezik, és igyekszünk rövid időn
+              belül válaszolni.
+            </div>
           </article>
           <ContactForm />
         </div>

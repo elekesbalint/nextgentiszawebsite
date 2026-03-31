@@ -1,3 +1,4 @@
+import Image from "next/image";
 import { SiteFooter } from "@/app/components/SiteFooter";
 import { SiteHeader } from "@/app/components/SiteHeader";
 import { CountUpOnView } from "@/app/components/CountUpOnView";
@@ -10,6 +11,14 @@ export default function RolunkPage() {
       <main>
         <section className="relative overflow-hidden border-b border-white/10 bg-[#07133b]">
           <div className="absolute inset-0 animate-hero-pulse bg-[radial-gradient(circle_at_15%_25%,rgba(34,211,238,0.24),transparent_44%),radial-gradient(circle_at_90%_20%,rgba(59,130,246,0.30),transparent_52%)]" />
+          <Image
+            src="/tisza-sziget-icon.png"
+            alt=""
+            width={600}
+            height={293}
+            aria-hidden
+            className="pointer-events-none absolute left-1/2 top-1/2 h-auto w-[760px] -translate-x-1/2 -translate-y-1/2 opacity-[0.06]"
+          />
           <div className="relative mx-auto w-full max-w-6xl px-6 py-20 md:py-24">
             <p className="animate-fade-up text-xs font-semibold uppercase tracking-[0.14em] text-cyan-200/90">
               Rólunk

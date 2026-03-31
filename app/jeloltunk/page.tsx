@@ -29,6 +29,14 @@ export default function JeloltunkPage() {
       <main>
         <section className="relative overflow-hidden border-b border-white/10 bg-[#050d2e]">
           <div className="absolute inset-0 bg-[radial-gradient(circle_at_20%_20%,rgba(56,189,248,0.20),transparent_45%),radial-gradient(circle_at_80%_30%,rgba(30,64,175,0.38),transparent_52%)]" />
+          <Image
+            src="/tisza-sziget-icon.png"
+            alt=""
+            width={600}
+            height={293}
+            aria-hidden
+            className="pointer-events-none absolute left-1/2 top-1/2 h-auto w-[760px] -translate-x-1/2 -translate-y-1/2 opacity-[0.06]"
+          />
           <div className="relative mx-auto grid w-full max-w-6xl gap-12 px-6 py-16 md:grid-cols-[1fr_1.15fr] md:items-center">
             <div className="animate-fade-up">
               <p className="inline-flex rounded-full border border-cyan-300/35 bg-cyan-400/10 px-3 py-1 text-xs font-semibold uppercase tracking-[0.12em] text-cyan-200">

@@ -1,3 +1,4 @@
+import Image from "next/image";
 import Link from "next/link";
 import { SiteFooter } from "@/app/components/SiteFooter";
 import { SiteHeader } from "@/app/components/SiteHeader";
@@ -9,6 +10,14 @@ export default function CselekedjPage() {
       <main>
         <section className="relative overflow-hidden border-b border-white/10 bg-[#081743]">
           <div className="absolute inset-0 animate-hero-pulse bg-[radial-gradient(circle_at_12%_20%,rgba(34,211,238,0.22),transparent_44%),radial-gradient(circle_at_82%_18%,rgba(37,99,235,0.34),transparent_54%)]" />
+          <Image
+            src="/tisza-sziget-icon.png"
+            alt=""
+            width={600}
+            height={293}
+            aria-hidden
+            className="pointer-events-none absolute left-1/2 top-1/2 h-auto w-[760px] -translate-x-1/2 -translate-y-1/2 opacity-[0.06]"
+          />
           <div className="relative mx-auto w-full max-w-6xl px-6 py-20">
             <p className="animate-fade-up text-xs font-semibold uppercase tracking-[0.14em] text-cyan-200/90">
               Cselekedj

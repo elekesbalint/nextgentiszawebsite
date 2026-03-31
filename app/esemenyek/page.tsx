@@ -1,3 +1,4 @@
+import Image from "next/image";
 import { SiteFooter } from "@/app/components/SiteFooter";
 import { SiteHeader } from "@/app/components/SiteHeader";
 
@@ -8,6 +9,14 @@ export default function EsemenyekPage() {
       <main>
         <section className="relative overflow-hidden border-b border-white/10 bg-[#08153f]">
           <div className="absolute inset-0 animate-hero-pulse bg-[radial-gradient(circle_at_10%_15%,rgba(34,211,238,0.20),transparent_42%),radial-gradient(circle_at_88%_10%,rgba(14,165,233,0.30),transparent_48%)]" />
+          <Image
+            src="/tisza-sziget-icon.png"
+            alt=""
+            width={600}
+            height={293}
+            aria-hidden
+            className="pointer-events-none absolute left-1/2 top-1/2 h-auto w-[760px] -translate-x-1/2 -translate-y-1/2 opacity-[0.06]"
+          />
           <div className="relative mx-auto w-full max-w-6xl px-6 py-20">
             <p className="animate-fade-up text-xs font-semibold uppercase tracking-[0.14em] text-cyan-200/90">
               Eseménynaptár

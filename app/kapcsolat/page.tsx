@@ -43,19 +43,14 @@ export default function KapcsolatPage() {
                   rel="noreferrer"
                   className="text-cyan-200 transition hover:text-cyan-100"
                 >
-                  tisza.tolnamegye.01oevk
+                  NEXT GEN Tisza sziget | Szekszárd
                 </a>
               </p>
               <p>
                 <span className="text-slate-400">Instagram:</span>{" "}
-                <a
-                  href="https://www.instagram.com/dr_sarosi_jozsef/"
-                  target="_blank"
-                  rel="noreferrer"
-                  className="text-cyan-200 transition hover:text-cyan-100"
-                >
+                <span className="text-cyan-200">
                   dr_sarosi_jozsef
-                </a>
+                </span>
               </p>
             </div>
 

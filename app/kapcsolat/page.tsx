@@ -46,12 +46,6 @@ export default function KapcsolatPage() {
                   NEXT GEN Tisza sziget | Szekszárd
                 </a>
               </p>
-              <p>
-                <span className="text-slate-400">Instagram:</span>{" "}
-                <span className="text-cyan-200">
-                  dr_sarosi_jozsef
-                </span>
-              </p>
             </div>
 
             <div className="mt-6 rounded-2xl border border-cyan-300/25 bg-cyan-300/10 px-4 py-3 text-sm text-cyan-50/95">

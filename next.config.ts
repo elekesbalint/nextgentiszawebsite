@@ -8,10 +8,6 @@ const nextConfig: NextConfig = {
         protocol: "https",
         hostname: "tpev.fra1.digitaloceanspaces.com",
       },
-      {
-        protocol: "https",
-        hostname: "framerusercontent.com",
-      },
     ],
   },
 };

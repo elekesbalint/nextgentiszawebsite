@@ -13,7 +13,7 @@ import { buildMetadata } from "@/app/seo";
 export const metadata: Metadata = buildMetadata({
   title: "Galéria",
   description:
-    "Fotók a TISZA országjárás szekszárdi állomásáról. A képek a magyartisza.hu hivatalos galériájából származnak.",
+    "Fotók a TISZA országjárás szekszárdi állomásáról. Tartalom a magyartisza.hu hivatalos galériájából, gyors helyi kiszolgálással.",
   path: "/galeria",
   keywords: ["Galéria", "Országjárás", "Szekszárd", "TISZA", "Tolna 01"],
 });

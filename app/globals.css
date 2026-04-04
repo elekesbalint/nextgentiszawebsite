@@ -62,6 +62,39 @@ body {
   }
 }
 
+@keyframes gallery-lightbox-enter {
+  from {
+    opacity: 0;
+    transform: scale(0.985);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes gallery-lightbox-next {
+  from {
+    opacity: 0;
+    transform: translateX(14px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes gallery-lightbox-prev {
+  from {
+    opacity: 0;
+    transform: translateX(-14px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
 @keyframes drift {
   0%,
   100% {
@@ -87,6 +120,18 @@ body {
 
 .animate-fade-in {
   animation: fade-in 800ms ease-out both;
+}
+
+.animate-gallery-lightbox-enter {
+  animation: gallery-lightbox-enter 0.32s cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
+.animate-gallery-lightbox-next {
+  animation: gallery-lightbox-next 0.28s cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
+.animate-gallery-lightbox-prev {
+  animation: gallery-lightbox-prev 0.28s cubic-bezier(0.22, 1, 0.36, 1) both;
 }
 
 .animate-logo-float {

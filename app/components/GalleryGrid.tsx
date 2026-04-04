@@ -5,22 +5,32 @@ import { useCallback, useEffect, useState } from "react";
 
 export type GalleryImageItem = { src: string; alt: string };
 
+type LightboxAnim = "enter" | "next" | "prev";
+
 export function GalleryGrid({ images }: { images: GalleryImageItem[] }) {
   const [index, setIndex] = useState<number | null>(null);
+  const [lightboxAnim, setLightboxAnim] = useState<LightboxAnim>("enter");
 
   const close = useCallback(() => setIndex(null), []);
   const goPrev = useCallback(() => {
+    setLightboxAnim("prev");
     setIndex((cur) => {
       if (cur === null) return null;
       return cur === 0 ? images.length - 1 : cur - 1;
     });
   }, [images.length]);
   const goNext = useCallback(() => {
+    setLightboxAnim("next");
     setIndex((cur) => {
       if (cur === null) return null;
       return cur === images.length - 1 ? 0 : cur + 1;
     });
   }, [images.length]);
+
+  const openAt = useCallback((idx: number) => {
+    setLightboxAnim("enter");
+    setIndex(idx);
+  }, []);
 
   useEffect(() => {
     if (index === null) return;
@@ -39,12 +49,12 @@ export function GalleryGrid({ images }: { images: GalleryImageItem[] }) {
 
   return (
     <>
-      <div className="columns-1 gap-4 sm:columns-2 lg:columns-3">
+      <div className="columns-1 gap-3 sm:columns-2 sm:gap-4 lg:columns-4">
         {images.map((img, idx) => (
           <button
             key={img.src}
             type="button"
-            onClick={() => setIndex(idx)}
+            onClick={() => openAt(idx)}
             className="group mb-4 block w-full break-inside-avoid overflow-hidden rounded-2xl border border-white/10 bg-white/5 text-left shadow-lg shadow-black/20 transition hover:border-cyan-300/35 focus:outline-none focus-visible:ring-2 focus-visible:ring-cyan-300/50"
           >
             <div className="relative w-full overflow-hidden">
@@ -54,7 +64,7 @@ export function GalleryGrid({ images }: { images: GalleryImageItem[] }) {
                 width={900}
                 height={700}
                 className="max-h-[420px] w-full object-cover transition duration-300 group-hover:scale-[1.02] group-hover:brightness-105"
-                sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
+                sizes="(max-width: 639px) 100vw, (max-width: 1023px) 50vw, 25vw"
               />
             </div>
           </button>
@@ -81,7 +91,7 @@ export function GalleryGrid({ images }: { images: GalleryImageItem[] }) {
             </button>
           </div>
           <div
-            className="relative flex min-h-0 flex-1 items-center justify-center gap-2"
+            className="relative flex min-h-0 flex-1 items-center justify-center gap-2 md:gap-4"
             onClick={close}
           >
             <button
@@ -90,7 +100,7 @@ export function GalleryGrid({ images }: { images: GalleryImageItem[] }) {
                 e.stopPropagation();
                 goPrev();
               }}
-              className="hidden shrink-0 rounded-full border border-white/25 p-3 text-white transition hover:bg-white/10 md:inline-flex"
+              className="z-[1] hidden shrink-0 rounded-full border border-white/25 bg-black/30 p-3 text-white backdrop-blur-sm transition hover:bg-white/10 md:inline-flex"
               aria-label="Előző kép"
             >
               <svg viewBox="0 0 24 24" className="h-6 w-6 fill-none stroke-current" aria-hidden>
@@ -98,18 +108,29 @@ export function GalleryGrid({ images }: { images: GalleryImageItem[] }) {
               </svg>
             </button>
             <div
-              className="relative max-h-[min(85vh,900px)] max-w-[min(95vw,1200px)]"
+              className="relative h-[min(88dvh,calc(100dvh-5.5rem))] w-full min-w-0 max-w-[min(96vw,calc(100vw-2rem))] md:max-w-[min(96vw,calc(100vw-8rem))]"
               onClick={(e) => e.stopPropagation()}
             >
-              <Image
-                src={images[index].src}
-                alt={images[index].alt}
-                width={1400}
-                height={1050}
-                className="max-h-[min(85vh,900px)] w-auto max-w-full rounded-xl object-contain shadow-2xl"
-                sizes="95vw"
-                priority
-              />
+              <div
+                key={index}
+                className={`absolute inset-0 ${
+                  lightboxAnim === "next"
+                    ? "animate-gallery-lightbox-next"
+                    : lightboxAnim === "prev"
+                      ? "animate-gallery-lightbox-prev"
+                      : "animate-gallery-lightbox-enter"
+                }`}
+              >
+                <Image
+                  src={images[index].src}
+                  alt={images[index].alt}
+                  fill
+                  unoptimized
+                  priority
+                  sizes="100vw"
+                  className="object-contain object-center drop-shadow-2xl"
+                />
+              </div>
             </div>
             <button
               type="button"
@@ -117,7 +138,7 @@ export function GalleryGrid({ images }: { images: GalleryImageItem[] }) {
                 e.stopPropagation();
                 goNext();
               }}
-              className="hidden shrink-0 rounded-full border border-white/25 p-3 text-white transition hover:bg-white/10 md:inline-flex"
+              className="z-[1] hidden shrink-0 rounded-full border border-white/25 bg-black/30 p-3 text-white backdrop-blur-sm transition hover:bg-white/10 md:inline-flex"
               aria-label="Következő kép"
             >
               <svg viewBox="0 0 24 24" className="h-6 w-6 fill-none stroke-current" aria-hidden>

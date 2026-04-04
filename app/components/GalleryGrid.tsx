@@ -1,15 +1,18 @@
 "use client";
 
 import Image from "next/image";
-import { useCallback, useEffect, useState } from "react";
+import { type TouchEvent, useCallback, useEffect, useRef, useState } from "react";
 
 export type GalleryImageItem = { src: string; alt: string };
 
 type LightboxAnim = "enter" | "next" | "prev";
 
+const SWIPE_THRESHOLD_PX = 56;
+
 export function GalleryGrid({ images }: { images: GalleryImageItem[] }) {
   const [index, setIndex] = useState<number | null>(null);
   const [lightboxAnim, setLightboxAnim] = useState<LightboxAnim>("enter");
+  const touchStartX = useRef<number | null>(null);
 
   const close = useCallback(() => setIndex(null), []);
   const goPrev = useCallback(() => {
@@ -31,6 +34,22 @@ export function GalleryGrid({ images }: { images: GalleryImageItem[] }) {
     setLightboxAnim("enter");
     setIndex(idx);
   }, []);
+
+  const onLightboxTouchStart = useCallback((e: TouchEvent) => {
+    touchStartX.current = e.touches[0].clientX;
+  }, []);
+
+  const onLightboxTouchEnd = useCallback(
+    (e: TouchEvent) => {
+      if (touchStartX.current === null) return;
+      const endX = e.changedTouches[0].clientX;
+      const dx = endX - touchStartX.current;
+      touchStartX.current = null;
+      if (dx > SWIPE_THRESHOLD_PX) goPrev();
+      else if (dx < -SWIPE_THRESHOLD_PX) goNext();
+    },
+    [goPrev, goNext],
+  );
 
   useEffect(() => {
     if (index === null) return;
@@ -91,7 +110,7 @@ export function GalleryGrid({ images }: { images: GalleryImageItem[] }) {
             </button>
           </div>
           <div
-            className="relative flex min-h-0 flex-1 items-center justify-center gap-2 md:gap-4"
+            className="relative flex min-h-0 flex-1 items-center justify-center gap-1.5 sm:gap-2 md:gap-4"
             onClick={close}
           >
             <button
@@ -100,16 +119,22 @@ export function GalleryGrid({ images }: { images: GalleryImageItem[] }) {
                 e.stopPropagation();
                 goPrev();
               }}
-              className="z-[1] hidden shrink-0 rounded-full border border-white/25 bg-black/30 p-3 text-white backdrop-blur-sm transition hover:bg-white/10 md:inline-flex"
+              className="z-[1] inline-flex shrink-0 touch-manipulation rounded-full border border-white/25 bg-black/45 p-2.5 text-white backdrop-blur-sm transition active:bg-white/15 sm:p-3 md:hover:bg-white/10"
               aria-label="Előző kép"
             >
-              <svg viewBox="0 0 24 24" className="h-6 w-6 fill-none stroke-current" aria-hidden>
+              <svg
+                viewBox="0 0 24 24"
+                className="h-5 w-5 fill-none stroke-current sm:h-6 sm:w-6"
+                aria-hidden
+              >
                 <path strokeWidth="2" strokeLinecap="round" d="m15 6-6 6 6 6" />
               </svg>
             </button>
             <div
-              className="relative h-[min(88dvh,calc(100dvh-5.5rem))] w-full min-w-0 max-w-[min(96vw,calc(100vw-2rem))] md:max-w-[min(96vw,calc(100vw-8rem))]"
+              className="relative h-[min(88dvh,calc(100dvh-5.5rem))] w-full min-w-0 max-w-[min(88vw,calc(100vw-5.5rem))] touch-pan-y sm:max-w-[min(92vw,calc(100vw-4rem))] md:max-w-[min(96vw,calc(100vw-8rem))]"
               onClick={(e) => e.stopPropagation()}
+              onTouchStart={onLightboxTouchStart}
+              onTouchEnd={onLightboxTouchEnd}
             >
               <div
                 key={index}
@@ -138,16 +163,24 @@ export function GalleryGrid({ images }: { images: GalleryImageItem[] }) {
                 e.stopPropagation();
                 goNext();
               }}
-              className="z-[1] hidden shrink-0 rounded-full border border-white/25 bg-black/30 p-3 text-white backdrop-blur-sm transition hover:bg-white/10 md:inline-flex"
+              className="z-[1] inline-flex shrink-0 touch-manipulation rounded-full border border-white/25 bg-black/45 p-2.5 text-white backdrop-blur-sm transition active:bg-white/15 sm:p-3 md:hover:bg-white/10"
               aria-label="Következő kép"
             >
-              <svg viewBox="0 0 24 24" className="h-6 w-6 fill-none stroke-current" aria-hidden>
+              <svg
+                viewBox="0 0 24 24"
+                className="h-5 w-5 fill-none stroke-current sm:h-6 sm:w-6"
+                aria-hidden
+              >
                 <path strokeWidth="2" strokeLinecap="round" d="m9 6 6 6-6 6" />
               </svg>
             </button>
           </div>
-          <p className="shrink-0 pt-3 text-center text-xs text-white/50 md:hidden">
-            Lapozás: balra / jobbra nyíl a billentyűzeten
+          <p className="shrink-0 pt-3 text-center text-xs text-white/55 md:hidden">
+            Lapozás: húzd jobbra az előzőhöz, balra a következőhöz – vagy a nyíl
+            gombokat használd.
+          </p>
+          <p className="hidden shrink-0 pt-2 text-center text-xs text-white/45 md:block">
+            Billentyűzet: balra / jobbra nyíl
           </p>
         </div>
       )}

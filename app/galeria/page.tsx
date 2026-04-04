@@ -57,16 +57,7 @@ export default function GaleriaPage() {
               Országjárás - Szekszárd
             </h1>
             <p className="mt-5 max-w-2xl text-base leading-8 text-white/90 md:text-lg md:leading-8">
-              Pillanatképek a közösségi eseményről. A fotók a{" "}
-              <a
-                href={OFFICIAL_TISZA_GALLERY_URL}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="font-medium text-[#98e3f8] underline decoration-white/30 underline-offset-4 transition hover:text-white hover:decoration-white/60"
-              >
-                magyartisza.hu
-              </a>{" "}
-              hivatalos galériájából származnak.
+              Pillanatképek a közösségi eseményről.
             </p>
             <Link
               href="/"

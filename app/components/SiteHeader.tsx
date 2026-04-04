@@ -21,6 +21,7 @@ export function SiteHeader() {
     { href: "/jeloltunk", label: "Jelöltünk" },
     { href: "/esemenyek", label: "Események" },
     { href: "/hirek", label: "Hírek" },
+    { href: "/galeria", label: "Galéria" },
     {
       href: "https://magyartisza.hu/cselekedj/onkentes",
       label: "Cselekedj",

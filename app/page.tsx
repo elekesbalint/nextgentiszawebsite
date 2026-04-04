@@ -5,6 +5,10 @@ import Script from "next/script";
 import { SiteFooter } from "@/app/components/SiteFooter";
 import { SiteHeader } from "@/app/components/SiteHeader";
 import { news, pillars } from "@/app/components/site-data";
+import {
+  galleryPreviewImages,
+  OFFICIAL_TISZA_GALLERY_URL,
+} from "@/app/components/gallery-data";
 import { buildMetadata } from "@/app/seo";
 
 export const metadata: Metadata = buildMetadata({
@@ -123,6 +127,60 @@ export default function Home() {
                 Részletes bemutatkozás
               </Link>
             </div>
+          </div>
+        </section>
+
+        <section className="border-b border-white/10 bg-slate-950">
+          <div className="mx-auto w-full max-w-6xl px-6 py-16">
+            <div className="flex flex-col gap-4 md:flex-row md:items-end md:justify-between">
+              <div>
+                <p className="text-xs font-semibold uppercase tracking-[0.14em] text-cyan-200/90">
+                  Galéria
+                </p>
+                <h2 className="mt-2 text-2xl font-semibold md:text-3xl">
+                  Országjárás – Szekszárd
+                </h2>
+                <p className="mt-3 max-w-xl text-sm leading-7 text-slate-300">
+                  Pillanatképek a TISZA közösségi eseményről. Teljes galéria és
+                  forrás a hivatalos oldalon.
+                </p>
+              </div>
+              <Link
+                href="/galeria"
+                className="inline-flex shrink-0 rounded-xl border border-cyan-300/40 bg-cyan-300/10 px-5 py-3 text-sm font-semibold text-cyan-100 transition hover:border-cyan-200 hover:bg-cyan-300/15"
+              >
+                Teljes galéria megtekintése
+              </Link>
+            </div>
+            <div className="mt-10 grid grid-cols-2 gap-3 md:grid-cols-4 md:gap-4">
+              {galleryPreviewImages.map((img) => (
+                <Link
+                  key={img.src}
+                  href="/galeria"
+                  className="group relative overflow-hidden rounded-2xl border border-white/10 bg-white/5 shadow-lg shadow-black/20 transition hover:border-cyan-300/35"
+                >
+                  <Image
+                    src={img.src}
+                    alt={img.alt}
+                    width={500}
+                    height={380}
+                    className="aspect-[4/3] h-full w-full object-cover transition duration-300 group-hover:scale-[1.04] group-hover:brightness-105"
+                    sizes="(max-width: 768px) 50vw, 25vw"
+                  />
+                </Link>
+              ))}
+            </div>
+            <p className="mt-6 text-center text-xs text-slate-500">
+              Forrás:{" "}
+              <a
+                href={OFFICIAL_TISZA_GALLERY_URL}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-cyan-500/90 underline decoration-cyan-500/30 underline-offset-2 hover:text-cyan-400"
+              >
+                magyartisza.hu
+              </a>
+            </p>
           </div>
         </section>
 

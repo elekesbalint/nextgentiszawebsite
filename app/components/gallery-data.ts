@@ -25,6 +25,17 @@ export const galleryImages: Array<{ src: string; alt: string }> = [
   { src: "/galeria/orszagjaras-14.png", alt },
   { src: "/galeria/orszagjaras-15.png", alt },
   { src: "/galeria/orszagjaras-16.png", alt },
+  { src: "/galeria/0.png", alt },
+  { src: "/galeria/1.png", alt },
+  { src: "/galeria/2.png", alt },
+  { src: "/galeria/3.png", alt },
+  { src: "/galeria/4.png", alt },
+  { src: "/galeria/5.png", alt },
+  { src: "/galeria/6.png", alt },
+  { src: "/galeria/7.png", alt },
+  { src: "/galeria/8.png", alt },
+  { src: "/galeria/9.png", alt },
+  { src: "/galeria/10.png", alt },
 ];
 
 export const galleryPreviewImages = galleryImages.slice(0, 4);

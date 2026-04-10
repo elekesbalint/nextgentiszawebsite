@@ -9,6 +9,16 @@ const alt =
   "TISZA országjárás, Szekszárd – fotó a magyartisza.hu galériájából";
 
 export const galleryImages: Array<{ src: string; alt: string }> = [
+  { src: "/galeria/uj-01.png", alt },
+  { src: "/galeria/uj-02.png", alt },
+  { src: "/galeria/uj-03.png", alt },
+  { src: "/galeria/uj-04.png", alt },
+  { src: "/galeria/uj-05.png", alt },
+  { src: "/galeria/uj-06.png", alt },
+  { src: "/galeria/uj-07.png", alt },
+  { src: "/galeria/uj-08.png", alt },
+  { src: "/galeria/uj-09.png", alt },
+  { src: "/galeria/uj-10.png", alt },
   { src: "/galeria/orszagjaras-01.png", alt },
   { src: "/galeria/orszagjaras-02.png", alt },
   { src: "/galeria/orszagjaras-03.png", alt },
@@ -25,16 +35,6 @@ export const galleryImages: Array<{ src: string; alt: string }> = [
   { src: "/galeria/orszagjaras-14.png", alt },
   { src: "/galeria/orszagjaras-15.png", alt },
   { src: "/galeria/orszagjaras-16.png", alt },
-  { src: "/galeria/uj-01.png", alt },
-  { src: "/galeria/uj-02.png", alt },
-  { src: "/galeria/uj-03.png", alt },
-  { src: "/galeria/uj-04.png", alt },
-  { src: "/galeria/uj-05.png", alt },
-  { src: "/galeria/uj-06.png", alt },
-  { src: "/galeria/uj-07.png", alt },
-  { src: "/galeria/uj-08.png", alt },
-  { src: "/galeria/uj-09.png", alt },
-  { src: "/galeria/uj-10.png", alt },
 ];
 
 export const galleryPreviewImages = galleryImages.slice(0, 4);

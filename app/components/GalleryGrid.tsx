@@ -68,13 +68,13 @@ export function GalleryGrid({ images }: { images: GalleryImageItem[] }) {
 
   return (
     <>
-      <div className="columns-1 gap-3 sm:columns-2 sm:gap-4 lg:columns-4">
+      <div className="grid grid-cols-1 gap-3 sm:grid-cols-2 sm:gap-4 lg:grid-cols-4">
         {images.map((img, idx) => (
           <button
             key={img.src}
             type="button"
             onClick={() => openAt(idx)}
-            className="group mb-4 block w-full break-inside-avoid overflow-hidden rounded-2xl border border-white/10 bg-white/5 text-left shadow-lg shadow-black/20 transition hover:border-cyan-300/35 focus:outline-none focus-visible:ring-2 focus-visible:ring-cyan-300/50"
+            className="group block w-full overflow-hidden rounded-2xl border border-white/10 bg-white/5 text-left shadow-lg shadow-black/20 transition hover:border-cyan-300/35 focus:outline-none focus-visible:ring-2 focus-visible:ring-cyan-300/50"
           >
             <div className="relative w-full overflow-hidden">
               <Image

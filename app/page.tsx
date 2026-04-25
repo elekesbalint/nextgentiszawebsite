@@ -256,16 +256,6 @@ export default function Home() {
                       {event.description}
                     </p>
                   ) : null}
-                  {"href" in event && event.href ? (
-                    <a
-                      href={event.href}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="mt-4 inline-flex text-sm font-semibold text-cyan-200 underline decoration-cyan-300/40 underline-offset-4 hover:text-cyan-100"
-                    >
-                      Részletek
-                    </a>
-                  ) : null}
                 </article>
               ))}
             </div>

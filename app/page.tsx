@@ -4,7 +4,7 @@ import type { Metadata } from "next";
 import Script from "next/script";
 import { SiteFooter } from "@/app/components/SiteFooter";
 import { SiteHeader } from "@/app/components/SiteHeader";
-import { news, pillars } from "@/app/components/site-data";
+import { events, news, pillars } from "@/app/components/site-data";
 import {
   galleryPreviewImages,
   OFFICIAL_TISZA_GALLERY_URL,
@@ -240,12 +240,35 @@ export default function Home() {
             <h2 className="text-3xl font-semibold md:text-4xl">
               Következő események
             </h2>
-            <article className="mt-10 rounded-2xl border border-cyan-300/25 bg-slate-900/70 p-8 text-center">
-              <p className="text-lg font-semibold text-cyan-200">Hamarosan...</p>
-              <p className="mt-3 text-sm text-slate-300">
-                Az eseménynaptár feltöltés alatt áll.
-              </p>
-            </article>
+            <div className="mt-10 grid gap-4 md:grid-cols-2">
+              {events.map((event) => (
+                <article
+                  key={`${event.date}-${event.title}`}
+                  className="rounded-2xl border border-cyan-300/25 bg-slate-900/70 p-6"
+                >
+                  <p className="text-xs font-semibold uppercase tracking-[0.12em] text-cyan-200">
+                    {event.date}
+                  </p>
+                  <h3 className="mt-2 text-xl font-semibold text-white">{event.title}</h3>
+                  <p className="mt-2 text-sm text-slate-300">{event.location}</p>
+                  {"description" in event && event.description ? (
+                    <p className="mt-3 text-sm leading-7 text-slate-200/90">
+                      {event.description}
+                    </p>
+                  ) : null}
+                  {"href" in event && event.href ? (
+                    <a
+                      href={event.href}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="mt-4 inline-flex text-sm font-semibold text-cyan-200 underline decoration-cyan-300/40 underline-offset-4 hover:text-cyan-100"
+                    >
+                      Részletek
+                    </a>
+                  ) : null}
+                </article>
+              ))}
+            </div>
           </div>
         </section>
 

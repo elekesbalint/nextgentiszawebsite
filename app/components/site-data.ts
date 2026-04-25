@@ -18,19 +18,30 @@ export const pillars = [
 
 export const events = [
   {
+    date: "Május 9. (szombat), 10:00 után",
+    title: "Ünnepi rendezvény a Kossuth téren",
+    location: "Budapest, Kossuth tér",
+    description:
+      "A miniszterelnöki eskütétel utáni nyilvános közösségi ünnepség.",
+    href: "https://telex.hu/belfold/2026/04/22/magyar-peter-miniszterelnoki-eskutetel-majus-9-kossuth-ter-unnepi-rendezveny",
+  },
+  {
     date: "Április 12.",
     title: "Nyilvános lakossági fórum",
     location: "Babits Mihály Kulturális Központ",
+    description: "Helyi közéleti fórum a körzet aktuális ügyeiről.",
   },
   {
     date: "Április 20.",
     title: "Tisza Sziget közösségi nap",
     location: "Prométheusz park",
+    description: "Közösségi találkozó, beszélgetés és helyi kapcsolatépítés.",
   },
   {
     date: "Május 2.",
     title: "Beszélgetés helyi vállalkozókkal",
     location: "TOLNA 01 KÖRZET belváros",
+    description: "Egyeztetés a helyi vállalkozások helyzetéről és lehetőségeiről.",
   },
 ];
 
